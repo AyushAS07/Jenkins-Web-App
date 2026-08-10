@@ -24,7 +24,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying web application...'
+                 echo 'Deploying website to IIS...'
+
+        bat 'xcopy /Y index.html C:\\inetpub\\wwwroot\\'
+        bat 'xcopy /Y style.css C:\\inetpub\\wwwroot\\'
+        bat 'xcopy /Y script.js C:\\inetpub\\wwwroot\\'
             }
         }
     }
